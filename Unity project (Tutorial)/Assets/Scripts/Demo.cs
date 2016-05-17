@@ -6,9 +6,16 @@ public class Demo : MonoBehaviour {
 
 	void Start ()
 	{
-		DamagePlayer(10);
+		DamagePlayer(20);
 	}
 
+	void Update()
+	{
+		if (health <= 0)
+		{
+			Debug.Log ("THe Player Has Died! health: " = health);
+		}
+	}
 	void DamagePlayer(int damage)
 	{
 		health -= damage;
