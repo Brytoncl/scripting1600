@@ -4,24 +4,21 @@ using System.Collections;
 public class Demo : MonoBehaviour {
 	public int health;
 
-	void Start ()
-	{
-		DamagePlayer(20);
-	}
+	public string[] arrayString;
 
 	void Update()
 	{
-		if (health <= 0) {
+		DamagePlayer (1);
+		if (health <= 0)
+		{
 			health = 0;
 			Destroy (gameObject, 2.5f);
 			Debug.Log ("THe Player Has Died! health: " + health);
 		} 
-		else if (health <= 15) 
-		{
-			print ("you have alot of life.");
-		}
+
+		print (arrayString[1]);
 	}
-	void DamagePlayer(int damage)
+	public void DamagePlayer(int damage)
 	{
 		health -= damage;
 	}
