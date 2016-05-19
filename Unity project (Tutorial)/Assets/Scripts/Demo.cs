@@ -11,9 +11,14 @@ public class Demo : MonoBehaviour {
 
 	void Update()
 	{
-		if (health <= 0)
+		if (health <= 0) {
+			health = 0;
+			Destroy (gameObject, 2.5f);
+			Debug.Log ("THe Player Has Died! health: " + health);
+		} 
+		else if (health <= 15) 
 		{
-			Debug.Log ("THe Player Has Died! health: " = health);
+			print ("you have alot of life.");
 		}
 	}
 	void DamagePlayer(int damage)
