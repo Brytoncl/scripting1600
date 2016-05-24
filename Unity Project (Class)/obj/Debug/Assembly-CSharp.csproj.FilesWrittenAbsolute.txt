@@ -1,0 +1,17 @@
+/Users/ryanlittle/scripting1600/Unity Project (Class)/obj/Debug/Assembly-CSharp.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/UnityEngine.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/UnityEditor.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/Mono.Cecil.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/Unity.DataContract.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/ryanlittle/scripting1600/Unity Project (Class)/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/ryanlittle/scripting1600/Unity Project (Class)/obj/Debug/Assembly-CSharp.dll.mdb
