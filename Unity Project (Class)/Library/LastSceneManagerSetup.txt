@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/changes.unity
+- path: C:/Users/10724098/scripting1600/Unity project (Tutorial)/Assets/variables.unity
   isLoaded: 1
   isActive: 1
