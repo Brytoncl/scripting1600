@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 public class Vars2 : MonoBehaviour {
@@ -30,3 +30,4 @@ public class Vars2 : MonoBehaviour {
 		print (MixIngredients (jelly, honey)); 
 	}
 }
+*/

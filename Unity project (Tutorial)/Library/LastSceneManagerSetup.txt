@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/variables.unity
+- path: C:/Users/10724098/scripting1600/Unity Project (Class)/Assets/variables copy.unity
   isLoaded: 1
   isActive: 1
