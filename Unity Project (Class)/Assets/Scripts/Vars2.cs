@@ -1,7 +1,8 @@
 ﻿/*using UnityEngine;
 using System.Collections;
 
-public class Vars2 : MonoBehaviour {
+public class Vars2 : MonoBehaviour 
+{
 
 
 	int jelly = 1;
@@ -16,16 +17,23 @@ public class Vars2 : MonoBehaviour {
 	string HoneyFlavor = "clover";
 	string peanutButterStyle = "crunchy";
 
-	int MixIngredients (int ingredient1, int ingredient2){
-		return ingredient1 + ingredient2;
+	int MixIngredients (int ingredient1)
+	{
+		return (ingredient1);	
+	}
+	int MixIngredients (int ingredient1, int ingredient2)
+	{
+		return (ingredient1 + ingredient2);
 	}
 
-	int MixiIngredients (int ingredient1, int ingredient2, int ingredient3){
+	int MixiIngredients (int ingredient1, int ingredient2, int ingredient3)
+	{
 		return (ingredient1+ingredient2+ingredient3);
 	}
 
-	void Start () {
-		print (MixIngredients (peanutButterStyle + MixIngredients (peanutbutter)));
+	void Start () 
+	{
+		//print (MixIngredients (peanutButterStyle + MixIngredients (peanutbutter)));
 		print (MixIngredients (peanutbutter, jelly));
 		print (MixIngredients (jelly, honey)); 
 	}
