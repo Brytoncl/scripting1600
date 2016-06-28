@@ -1,0 +1,23 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class AlienTypes : MonoBehaviour {
+
+	public int[] alienhealth;
+
+	void Update () {
+		if (alienhealth [0] <= 0) {
+			alienhealth [0] = 0;
+			print ("You killed Alien!");
+		}
+		if (alienhealth [1] <= 0) {
+			alienhealth [1] = 0;
+			print ("You killed Alien!");
+		}
+		if (alienhealth [2] <= 0) {
+			alienhealth [2] = 0;
+			print ("You killed Alien!");
+		}
+	}
+
+	}
