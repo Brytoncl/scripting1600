@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AlienTypes : MonoBehaviour {
-
+public class AlienTypes : MonoBehaviour
+{
+	int _a;
+	int _b;
 	public int[] alienhealth;
 
 	/*void Start ()n {
@@ -13,7 +15,8 @@ public class AlienTypes : MonoBehaviour {
 	 * } */
 	private PlayerHealth playerHealth;
 
-	void Awake () {
+	void Awake () 
+	{
 		playerHealth = GetComponent<PlayerHealth> ();
 	}
 
@@ -23,19 +26,30 @@ public class AlienTypes : MonoBehaviour {
 			playerHealth.health -= 1;
 		}
 	}*/
-	void Update () {
-		if (alienhealth [0] <= 0) {
-			alienhealth [0] = 0;
-			print ("You killed Alien!");
-		}
-		if (alienhealth [1] <= 0) {
-			alienhealth [1] = 0;
-			print ("You killed Alien!");
-		}
-		if (alienhealth [2] <= 0) {
-			alienhealth [2] = 0;
-			print ("You killed Alien!");
-		}
-	}
 
+
+	public void AlienReport ()
+	{
+		foreach (int _a in alienhealth) {
+			if (_a <= 0) {
+				print ("You Killed An Alien");
+			}
+			while (alienhealth [_b] <= 0) {
+				_b = 0;
+			}
+			/*}
+		if (alienhealth [0] <= 0) 
+		{
+			alienhealth [0] = 0;
+		}
+		if (alienhealth [1] <= 0) 
+		{
+			alienhealth [1] = 0;
+		}
+		if (alienhealth [2] <= 0) 
+		{
+			alienhealth [2] = 0;
+		}*/
+		}
 	}
+}
