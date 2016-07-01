@@ -34,10 +34,11 @@ public class AlienTypes : MonoBehaviour
 			if (_a <= 0) {
 				print ("You Killed An Alien");
 			}
-			while (alienhealth [_b] <= 0) {
+			/*while (alienhealth [_b] <= 0) {
 				_b = 0;
+			}*/
+
 			}
-			/*}
 		if (alienhealth [0] <= 0) 
 		{
 			alienhealth [0] = 0;
@@ -49,7 +50,6 @@ public class AlienTypes : MonoBehaviour
 		if (alienhealth [2] <= 0) 
 		{
 			alienhealth [2] = 0;
-		}*/
 		}
 	}
 }
