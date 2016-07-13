@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: fc8b2937d1ee55c42b11ab17ba92db54
 folderAsset: yes
 timeCreated: 1468254446
+=======
+guid: 21de2a11a1100ef418724483462016f3
+folderAsset: yes
+timeCreated: 1468253900
+>>>>>>> Powerups_BL
 licenseType: Pro
 DefaultImporter:
   userData: 
