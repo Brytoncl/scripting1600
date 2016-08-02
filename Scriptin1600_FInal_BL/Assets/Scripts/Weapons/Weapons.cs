@@ -14,6 +14,6 @@ using System.Collections;
 				myWeaponsList.myWeapons.Add (this);
 				gameObject.SetActive (false);
 			} else
-				print ("Inventory Full");
+				print ("Weapon Inventory Full");
 		}
 	}
