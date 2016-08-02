@@ -3,17 +3,17 @@ using System.Collections;
 
 	public class Weapons : MonoBehaviour {
 
-		public WeaponsInventory myWeaponsInventory;
+		public WeaponsList myWeaponsList;
 
 		//the game object name 
 		public int firePower;
 		public int ammoCount;
 
 		void OnMouseUp () {
-			if (myWeaponsInventory.myWeapons.Count < 2) {
-				myWeaponsInventory.myWeapons.Add (this);
+			if (myWeaponsList.myWeapons.Count < 2) {
+				myWeaponsList.myWeapons.Add (this);
 				gameObject.SetActive (false);
 			} else
-				print ("Invventory Full");
+				print ("Inventory Full");
 		}
 	}
