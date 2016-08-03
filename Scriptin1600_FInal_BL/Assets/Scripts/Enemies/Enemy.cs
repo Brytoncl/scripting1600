@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemies : MonoBehaviour {
+public class Enemy : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public Weapons weaponStats;
+	public WeaponsList myWeaponsList;
+
+	public int enemyHealth = 100;
+
+	void OnMouseDown () {
+		//make into switch statement 
+		if (myWeaponsList.myWeapons.Count >0 &&  myWeaponsList.myWeapons [0].ammoCount > 0) {
+			myWeaponsList.myWeapons [0].ammoCount--;
+			enemyHealth -= myWeaponsList.myWeapons [0].firePower;
+		}
 	}
 }
