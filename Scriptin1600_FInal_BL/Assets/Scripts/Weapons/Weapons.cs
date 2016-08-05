@@ -8,7 +8,8 @@ using System.Collections;
 		//the game object name 
 		public int firePower;
 		public int ammoCount;
-
+		public int reserveAmmo;
+		
 		void OnMouseUp () {
 			if (myWeaponsList.myWeapons.Count < 2) {
 				myWeaponsList.myWeapons.Add (this);
@@ -16,4 +17,4 @@ using System.Collections;
 			} else
 				print ("Weapon Inventory Full");
 		}
-	}
+}

@@ -13,6 +13,6 @@ public class EnemyAgent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		agent.destination = Player.position;
+		agent.destination = player.position;
 	}
 }
