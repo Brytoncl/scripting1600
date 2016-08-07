@@ -23,7 +23,8 @@ using System.Collections;
 			if (myWeaponsList.myWeapons.Count < 2) {
 				myWeaponsList.myWeapons.Add (this);
 				gameObject.SetActive (false);
-			print ("You Picked Up The"+ " " + gameObject.name);
+				myWeaponsList.UpdateWeaponType ();
+			print ("You Picked Up The "+ gameObject.name);
 			} else
 				print ("Weapon Inventory Full");
 		}

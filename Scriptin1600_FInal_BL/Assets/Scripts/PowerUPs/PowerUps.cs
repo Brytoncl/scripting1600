@@ -12,10 +12,10 @@ public class PowerUps : MonoBehaviour {
 	public int _i;
 	public GameObject [] PowerUpsArray;
 	 
-	void Awake () {
-		PowerUpsArray = GameObject.FindGameObjectsWithTag ("PowerUps");
+	void RemovePickup () {
+		myPowerUpsList.powerUpNumber = 0;
+		myPowerUpsList.PowerUpList.RemoveAt (0);
 	}
-
 	void OnMouseUp () {
 		if (myPowerUpsList.PowerUpList.Count < 1) {
 			myPowerUpsList.PowerUpList.Add (this);
@@ -27,10 +27,19 @@ public class PowerUps : MonoBehaviour {
 	public void MaxHealth() {
 		myPlayerStats.health = 100;
 		print ("Max Health");
-		myPowerUpsList.powerUpNumber = 0;
-		myPowerUpsList.PowerUpList.RemoveAt (0);
+		RemovePickup ();
 	}
-
+	public void Damage () {
+		print ("InstaKill");
+		RemovePickup ();
+	}
+	public void Demolition () {
+		print ("NUKE");
+		myEnemies.NUKE ();
+		myPlayerStats.score += 400;
+		myPlayerStats.UpdateScore ();
+		RemovePickup ();
+	}
 	public void MaxAmmo () {
 		print ("MaxAmmo");
 		switch (myWeaponsList.myWeapons.Count) {
@@ -38,13 +47,13 @@ public class PowerUps : MonoBehaviour {
 		case 2:
 			myWeaponsList.myWeapons [0].reserveAmmo = myWeaponsList.myWeapons [0].maxReserves;
 			myWeaponsList.myWeapons [1].reserveAmmo = myWeaponsList.myWeapons [1].maxReserves;
-			myPowerUpsList.powerUpNumber = 0;
-			myPowerUpsList.PowerUpList.RemoveAt (0);
+			RemovePickup ();
+			myWeaponsList.UpdateWeaponType ();
 			break;
 		case 1:
 			myWeaponsList.myWeapons [0].reserveAmmo = myWeaponsList.myWeapons [0].maxReserves;
-			myPowerUpsList.powerUpNumber = 0;
-			myPowerUpsList.PowerUpList.RemoveAt (0);
+			RemovePickup ();
+			myWeaponsList.UpdateWeaponType ();
 			break;
 		default:
 			print ("No Weapons In Inventory");
@@ -52,17 +61,8 @@ public class PowerUps : MonoBehaviour {
 		}
 
 	}
-
-	public void Damage () {
-		print ("InstaKill");
-		myPowerUpsList.powerUpNumber = 0;
-		myPowerUpsList.PowerUpList.RemoveAt (0);
+	void Awake () {
+		PowerUpsArray = GameObject.FindGameObjectsWithTag ("PowerUps");
 	}
 
-	public void Demolition () {
-		print ("NUKE");
-		myEnemies.NUKE ();
-		myPowerUpsList.powerUpNumber = 0;
-		myPowerUpsList.PowerUpList.RemoveAt (0);
-	}
 }
