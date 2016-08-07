@@ -42,7 +42,7 @@ public class PowerUps : MonoBehaviour {
 			myPowerUpsList.PowerUpList.RemoveAt (0);
 			break;
 		case 1:
-			myWeaponsList.myWeapons [0].reserveAmmo += myWeaponsList.myWeapons [0].maxReserves;
+			myWeaponsList.myWeapons [0].reserveAmmo = myWeaponsList.myWeapons [0].maxReserves;
 			myPowerUpsList.powerUpNumber = 0;
 			myPowerUpsList.PowerUpList.RemoveAt (0);
 			break;
@@ -61,7 +61,7 @@ public class PowerUps : MonoBehaviour {
 
 	public void Demolition () {
 		print ("NUKE");
-		//myEnemies.NUKE ();
+		myEnemies.NUKE ();
 		myPowerUpsList.powerUpNumber = 0;
 		myPowerUpsList.PowerUpList.RemoveAt (0);
 	}

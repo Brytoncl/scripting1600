@@ -27,17 +27,8 @@ using System.Collections;
 			} else
 				print ("Weapon Inventory Full");
 		}
-	//IEnumerator
-	void Reload (){
-		if (Input.GetKeyDown (KeyCode.R) && myWeaponsList.myWeapons [0].magazine == 0 && myWeaponsList.myWeapons  [0].reserveAmmo > 0) {
-			//yield return new WaitForSeconds (reloadTime); 
-			myWeaponsList.myWeapons [0].magazine += myWeaponsList.myWeapons  [0].magazineSize;
-			myWeaponsList.myWeapons [0].reserveAmmo -= myWeaponsList.myWeapons [0].magazineSize;
-			print ("Weapon Loaded");
-		}
 
-	}
 	void Update (){
-		Reload ();
+		myWeaponsList.Reload ();
 	}
 }

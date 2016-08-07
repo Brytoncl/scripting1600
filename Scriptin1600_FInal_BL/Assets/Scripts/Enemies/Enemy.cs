@@ -11,11 +11,9 @@ public class Enemy : MonoBehaviour {
 	public int enemyHealth = 100;
 
 	public void NUKE() {
-		if (Input.GetKeyDown (KeyCode.B)) {
 			foreach (GameObject item in EnemiesArray) {
 				gameObject.SetActive (false);
 			}
-		}
 	}
 	void Awake () {
 		EnemiesArray = GameObject.FindGameObjectsWithTag ("Enemy");
