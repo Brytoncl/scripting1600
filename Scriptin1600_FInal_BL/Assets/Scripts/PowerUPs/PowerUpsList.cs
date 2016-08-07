@@ -2,15 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PowerUpsList : MonoBehaviour {
+public class PowerUpsList : MonoBehaviour 
+{
 
 	public List<PowerUps> PowerUpList = new List<PowerUps>();
 	public PowerUps myPowerUps;
 	public int powerUpNumber;
 
-	void UsePowerUp () {
-		if (Input.GetKeyUp (KeyCode.Q) && PowerUpList.Count > 0) {
-			switch (powerUpNumber) {
+	void UsePowerUp () 
+	{
+		if (Input.GetKeyUp (KeyCode.Q) && PowerUpList.Count > 0) 
+		{
+			switch (powerUpNumber) 
+			{
 			case 1:
 				myPowerUps.MaxHealth ();
 				break;
@@ -29,7 +33,8 @@ public class PowerUpsList : MonoBehaviour {
 			}
 		}
 	}
-	void Update () {
+	void Update () 
+	{
 		UsePowerUp ();
 	}
 }

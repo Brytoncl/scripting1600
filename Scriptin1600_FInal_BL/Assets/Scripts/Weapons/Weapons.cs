@@ -28,8 +28,4 @@ using System.Collections;
 			} else
 				print ("Weapon Inventory Full");
 		}
-
-	void Update (){
-		myWeaponsList.Reload ();
-	}
 }

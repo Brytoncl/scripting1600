@@ -28,6 +28,7 @@ public class PowerUps : MonoBehaviour {
 		myPlayerStats.health = 100;
 		print ("Max Health");
 		RemovePickup ();
+		myPlayerStats.UpdateHealth ();
 	}
 	public void Damage () {
 		print ("InstaKill");
