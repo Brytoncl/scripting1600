@@ -9,7 +9,10 @@ public class Enemy : MonoBehaviour {
 	public GameObject [] EnemiesArray;
 	public Player myPlayerStats;
 
+	public int i =0;
+	public int activeEnemies;
 	public int enemyHealth = 100;
+	public bool ShouldContinue = false;
 
 	public void NUKE() 
 	{
@@ -27,9 +30,22 @@ public class Enemy : MonoBehaviour {
 			myPlayerStats.UpdateScore ();
 		}
 	}
+	public void Spawner (){
+		bool ShouldContinue = false;
+
+		do {
+			EnemiesArray[i].gameObject.SetActive(true);
+			i = Random.Range (1,20);
+		} while(ShouldContinue == true);
+	}
+
 	void Awake () 
 	{
 		EnemiesArray = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject item in EnemiesArray) {
+			gameObject.SetActive (false); 
+
+		}
 	}
 
 	void OnMouseDown () 
@@ -43,6 +59,11 @@ public class Enemy : MonoBehaviour {
 			myWeaponsList.UpdateWeaponType ();
 			KillEnemy ();
 			print ("Magazine " + myWeaponsList.myWeapons [0].magazine);
+		}
+	}
+	void Update () {
+		while (activeEnemies < 20) {
+			ShouldContinue = true;
 		}
 	}
 }

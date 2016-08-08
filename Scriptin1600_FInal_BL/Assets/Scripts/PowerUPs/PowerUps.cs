@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PowerUps : MonoBehaviour {
 
+	public DamageStates myDamageStates;
 	public Enemy myEnemies;
 	public WeaponsList myWeaponsList;
 	public Player myPlayerStats;
@@ -33,6 +34,8 @@ public class PowerUps : MonoBehaviour {
 	public void Damage () {
 		print ("InstaKill");
 		RemovePickup ();
+		myDamageStates.InstaKillState ();
+		myDamageStates.InstaKill ();
 	}
 	public void Demolition () {
 		print ("NUKE");

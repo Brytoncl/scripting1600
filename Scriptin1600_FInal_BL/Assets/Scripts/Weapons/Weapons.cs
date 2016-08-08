@@ -12,8 +12,22 @@ using System.Collections;
 		public int reserveAmmo;
 		public int magazineSize;
 		public int maxReserves;
+		public int defaultFirePower;
 		int _i;
 	public GameObject [] WeaponsArray;
+
+	/*public void DamageBoost () 
+	{
+		foreach (GameObject item in WeaponsArray) 
+		{
+		}
+	}
+	public void DefaultDamage ()
+	{
+		for(int i =0; i < WeaponsArray.Length; i++)
+		{
+		}
+	}*/
 
 	void Awake () {
 		WeaponsArray = GameObject.FindGameObjectsWithTag ("Weapon");
