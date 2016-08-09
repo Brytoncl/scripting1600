@@ -3,8 +3,12 @@ using System.Collections;
 
 public class EnemyAgent : MonoBehaviour {
 
+	Player myPlayerStats;
 	private NavMeshAgent agent;
 	public Transform player;
+
+
+
 
 	// Use this for initialization
 	void Start () {

@@ -9,8 +9,26 @@ public class Enemy : MonoBehaviour {
 	public GameObject [] EnemiesArray;
 	public Player myPlayerStats;
 
+	public float AttackSpeed = 2.5f;
 	public int enemyHealth = 100;
 
+	void OnTriggerEnter (Collider col){
+		switch (col.tag) {
+		case "Player":  
+			myPlayerStats.health -= 50;
+			print ("Player Damaged");
+			myPlayerStats.UpdateHealth ();
+			StartCoroutine ("WaitForAttackSpeed");
+			break;
+
+		}
+	
+	}
+
+	IEnumerator WaitForAttackSpeed () {
+		yield return new WaitForSeconds (AttackSpeed);
+		print ("Attack");
+	}
 	public void NUKE() 
 	{
 		foreach (GameObject item in EnemiesArray) 
@@ -26,7 +44,9 @@ public class Enemy : MonoBehaviour {
 			myPlayerStats.score += 100;
 			myPlayerStats.UpdateScore ();
 		}
-	}
+
+		}
+
 	void Awake () 
 	{
 		EnemiesArray = GameObject.FindGameObjectsWithTag ("Enemy");

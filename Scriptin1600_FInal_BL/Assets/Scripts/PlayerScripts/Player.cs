@@ -12,6 +12,10 @@ public class Player : MonoBehaviour {
 
 	public Text countScore;
 
+	public void OnTriggerEnter () {
+
+	}
+
 	public void UpdateHealth () {
 		countHealth.text = "HEALTH: "+ health.ToString ();
 	}
