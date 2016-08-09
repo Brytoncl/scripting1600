@@ -28,6 +28,7 @@ public class Enemy : MonoBehaviour {
 	IEnumerator WaitForAttackSpeed () {
 		yield return new WaitForSeconds (AttackSpeed);
 		print ("Attack");
+		//attack again 
 	}
 	public void NUKE() 
 	{

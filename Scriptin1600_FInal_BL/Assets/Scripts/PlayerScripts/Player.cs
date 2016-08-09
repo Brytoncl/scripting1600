@@ -11,10 +11,11 @@ public class Player : MonoBehaviour {
 	public int score = 0;
 
 	public Text countScore;
+	public PowerUpsList myPowerUpsList;
 
-	public void OnTriggerEnter () {
-
-	}
+	public void OnTriggerEnter (Collider col) {
+		myPowerUpsList.UsePowerUp ();
+		}
 
 	public void UpdateHealth () {
 		countHealth.text = "HEALTH: "+ health.ToString ();

@@ -9,7 +9,7 @@ public class PowerUpsList : MonoBehaviour
 	public PowerUps myPowerUps;
 	public int powerUpNumber;
 
-	void UsePowerUp () 
+	public void UsePowerUp () 
 	{
 		if (Input.GetKeyUp (KeyCode.Q) && PowerUpList.Count > 0) 
 		{

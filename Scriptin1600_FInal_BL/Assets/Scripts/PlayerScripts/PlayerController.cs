@@ -8,15 +8,6 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 5;
 	public float rotateSpeed = 1;
 
-	void Sprint () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			moveSpeed += 5;
-		}
-		if (Input.GetKeyUp (KeyCode.Space)) {
-			moveSpeed -= 5;
-		}
-	}
-
 	void Start () {
 		character = GetComponent<CharacterController> ();
 	}
@@ -36,6 +27,5 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		Move (Input.GetAxis ("Vertical"));
 		Rotate (Input.GetAxis ("Horizontal"));
-		Sprint ();
 	}
 }
