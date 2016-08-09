@@ -36,7 +36,7 @@ public class DamageStates : MonoBehaviour
 		switch (CurrentState) 
 		{
 		case playerState.InstaKill:
-			//myWeapons.DamageBoost ();
+			myWeapons.DamageBoost ();
 			StartCoroutine ("InstaKillTimer");
 			break;
 		case playerState.normalDamage:
@@ -48,7 +48,7 @@ public class DamageStates : MonoBehaviour
 	{
 		yield return new WaitForSeconds (30);
 		NormalState ();
-		//myWeapons.DefaultDamage ();
+		myWeapons.DefaultDamage ();
 		print ("NormalDamage");
 	}
 }
