@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour {
 	public Player myPlayerStats;
 
 	public int enemyHealth = 100;
-	public bool ShouldContinue = false;
 
 	public void NUKE() 
 	{
@@ -31,8 +30,6 @@ public class Enemy : MonoBehaviour {
 	void Awake () 
 	{
 		EnemiesArray = GameObject.FindGameObjectsWithTag ("Enemy");
-
-
 		}
 
 	void OnMouseDown () 

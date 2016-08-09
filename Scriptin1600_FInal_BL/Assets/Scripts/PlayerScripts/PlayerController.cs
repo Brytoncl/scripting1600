@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour {
 	private CharacterController character;
 	private Vector3 moveVector;
 	public float moveSpeed = 5;
-	public float rotateSpeed = 2;
+	public float rotateSpeed = 1;
 
 	void Sprint () {
 		if (Input.GetKeyDown (KeyCode.Space)) {
