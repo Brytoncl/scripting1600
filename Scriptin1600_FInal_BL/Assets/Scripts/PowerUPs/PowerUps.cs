@@ -68,6 +68,13 @@ public class PowerUps : MonoBehaviour {
 	}
 	void Awake () {
 		PowerUpsArray = GameObject.FindGameObjectsWithTag ("PowerUps");
+
+	}
+	void Start (){
+		foreach (GameObject item in PowerUpsArray) {
+			item.gameObject.SetActive (false);
+
+		}
 	}
 
 }

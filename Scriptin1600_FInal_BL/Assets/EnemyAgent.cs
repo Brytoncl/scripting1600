@@ -13,6 +13,7 @@ public class EnemyAgent : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		agent = GetComponent<NavMeshAgent> ();
+		player = GameObject.Find ("Player").transform;
 	}
 	
 	// Update is called once per frame

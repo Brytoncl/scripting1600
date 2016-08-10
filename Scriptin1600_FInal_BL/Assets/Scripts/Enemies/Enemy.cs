@@ -9,19 +9,54 @@ public class Enemy : MonoBehaviour {
 	public GameObject [] EnemiesArray;
 	public Player myPlayerStats;
 	public EnemySpawner myEnemySpawner;
+	public PowerUps myPowerUps;
 
 	public float AttackSpeed = 2.5f;
 	public int enemyHealth = 100;
+	public int PowerUpDropOdds = 0;
+	public Transform enemyPos;
+
+	public enum AttackState {Attacking,NotAttacking}
+
+	AttackState state = AttackState.Attacking;
 
 	void OnTriggerEnter (Collider col){
-		switch (col.tag) {
-		case "Player":  
-			myPlayerStats.health -= 50;
-			print ("Player Damaged");
-			myPlayerStats.UpdateHealth ();
-			StartCoroutine ("WaitForAttackSpeed");
+		switch (state) {
+		case AttackState.Attacking:
+			switch (col.tag) {
+			case "Player":  
+				myPlayerStats.health -= 50;
+				print ("Player Damaged");
+				myPlayerStats.UpdateHealth ();
+				state = AttackState.NotAttacking;
+				//this makes all enemies unable to attack 
+				break;
+			}
 			break;
-
+		case AttackState.NotAttacking:
+			StartCoroutine (WaitForAttackSpeed());
+			print ("cant attack");
+			break;
+		}
+	}
+		public void RandomPowerUp(){
+		switch (PowerUpDropOdds) {
+		case 1:
+			myPowerUps.PowerUpsArray [0].transform.position = enemyPos.transform.position;
+			myPowerUps.PowerUpsArray [0].gameObject.SetActive (true);
+		break;
+		case 2:
+			myPowerUps.PowerUpsArray [1].transform.position = enemyPos.transform.position;
+			myPowerUps.PowerUpsArray [1].gameObject.SetActive (true);
+			break;
+		case 3:
+			myPowerUps.PowerUpsArray [2].transform.position = enemyPos.transform.position;
+			myPowerUps.PowerUpsArray [2].gameObject.SetActive (true);
+			break;
+		case 4:
+			myPowerUps.PowerUpsArray [3].transform.position = enemyPos.transform.position;
+			myPowerUps.PowerUpsArray [3].gameObject.SetActive (true);
+			break;
 		}
 	
 	}
@@ -31,7 +66,7 @@ public class Enemy : MonoBehaviour {
 
 	IEnumerator WaitForAttackSpeed () {
 		yield return new WaitForSeconds (AttackSpeed);
-		print ("Attack");
+		state = AttackState.Attacking;
 		//attack again 
 	}
 	public void NUKE()
@@ -44,12 +79,16 @@ public class Enemy : MonoBehaviour {
 	{
 			if (enemyHealth <= 0) 
 		{
-			gameObject.SetActive (false);
+			
 			myEnemySpawner.state = EnemySpawner.WaveState.Spawning;
 			myEnemySpawner.myEnemyWaves.ActiveEnemies -= 1;
 			myEnemySpawner.SpawnState ();
 			myPlayerStats.score += 100;
 			myPlayerStats.UpdateScore ();
+			PowerUpDropOdds = Random.Range (1, 100);
+			RandomPowerUp ();
+			gameObject.SetActive (false);
+
 		}
 
 		}

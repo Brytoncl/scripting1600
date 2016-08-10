@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour {
 	[System.Serializable]
 	public class EnemyWaves
 	{
-		public int WaveNumber;
+		//public int WaveNumber;
 		//public int EnemiesAlive;
 		public int EnemiesLeft = 20;
 		public int ActiveEnemies = 0;
@@ -19,7 +19,6 @@ public class EnemySpawner : MonoBehaviour {
 	public enum WaveState {Spawning, Waiting,}
 
 	public EnemyWaves[] waves;
-
 	//public int timeBetweenWaves;
 	public EnemyWaves myEnemyWaves;
 
@@ -32,7 +31,7 @@ public class EnemySpawner : MonoBehaviour {
 	public void SpawnState () {
 		switch (state){
 		case WaveState.Spawning:
-			if (myEnemyWaves.ActiveEnemies != myEnemyWaves.EnemiesLeft) {
+			if (myEnemyWaves.ActiveEnemies < myEnemyWaves.EnemiesLeft) {
 				StartCoroutine (WaitForSpawnDelay ());
 			} else {
 				state = WaveState.Waiting;
@@ -61,24 +60,14 @@ public class EnemySpawner : MonoBehaviour {
 
 	}
 
-	void SpawnAnEnemyButton(){
-		if (Input.GetKeyDown (KeyCode.K)) {
-			SpawnAnEnemy ();
-			print ("incoming enemy");
-		}
-	}
-
 	void SpawnAnEnemy(){
 		EnemyPrefabClone [0] = Instantiate (EnemyPrefab, spawnLocations [Random.Range (1, 8)].transform.position, Quaternion.Euler (0, 0, 0)) as GameObject;
 		myEnemyWaves.ActiveEnemies += 1;
-		EnemyPrefabClone [0].gameObject.SetActive (true);
+		//EnemyPrefabClone [0].gameObject.SetActive (true);
 	}
 
 	void Start () {
 		//have a start up time to get ready.
 		SpawnState ();
-	}
-	void Update () {
-		SpawnAnEnemyButton ();
 	}
 }

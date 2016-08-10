@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
 	public Text countHealth;
 
-	public int health;
+	public int health = 100;
 
 	public int score = 0;
 
