@@ -71,7 +71,7 @@ public class EnemySpawner : MonoBehaviour {
 	void SpawnAnEnemy(){
 		EnemyPrefabClone [0] = Instantiate (EnemyPrefab, spawnLocations [Random.Range (1, 8)].transform.position, Quaternion.Euler (0, 0, 0)) as GameObject;
 		myEnemyWaves.ActiveEnemies += 1;
-		//fix set active issue;
+		EnemyPrefabClone [0].gameObject.SetActive (true);
 	}
 
 	void Start () {
