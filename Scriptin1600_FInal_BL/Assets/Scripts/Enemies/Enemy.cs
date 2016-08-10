@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
 	public WeaponsList myWeaponsList;
 	public GameObject [] EnemiesArray;
 	public Player myPlayerStats;
+	public EnemySpawner myEnemySpawner;
 
 	public float AttackSpeed = 2.5f;
 	public int enemyHealth = 100;
@@ -33,10 +34,9 @@ public class Enemy : MonoBehaviour {
 		print ("Attack");
 		//attack again 
 	}
-	public void NUKE() 
+	public void NUKE()
 	{
-		foreach (GameObject item in EnemiesArray) 
-		{
+		foreach (GameObject item in EnemiesArray) {
 			item.gameObject.SetActive (false);
 		}
 	}
@@ -45,6 +45,9 @@ public class Enemy : MonoBehaviour {
 			if (enemyHealth <= 0) 
 		{
 			gameObject.SetActive (false);
+			myEnemySpawner.state = EnemySpawner.WaveState.Spawning;
+			myEnemySpawner.myEnemyWaves.ActiveEnemies -= 1;
+			myEnemySpawner.SpawnState ();
 			myPlayerStats.score += 100;
 			myPlayerStats.UpdateScore ();
 		}
