@@ -24,6 +24,9 @@ public class Enemy : MonoBehaviour {
 		}
 	
 	}
+	public void FindEnemiesArray (){
+		EnemiesArray = GameObject.FindGameObjectsWithTag ("Enemy");
+	}
 
 	IEnumerator WaitForAttackSpeed () {
 		yield return new WaitForSeconds (AttackSpeed);
@@ -34,7 +37,7 @@ public class Enemy : MonoBehaviour {
 	{
 		foreach (GameObject item in EnemiesArray) 
 		{
-			gameObject.SetActive (false);
+			item.gameObject.SetActive (false);
 		}
 	}
 		public void KillEnemy () 
@@ -46,11 +49,6 @@ public class Enemy : MonoBehaviour {
 			myPlayerStats.UpdateScore ();
 		}
 
-		}
-
-	void Awake () 
-	{
-		EnemiesArray = GameObject.FindGameObjectsWithTag ("Enemy");
 		}
 
 	void OnMouseDown () 

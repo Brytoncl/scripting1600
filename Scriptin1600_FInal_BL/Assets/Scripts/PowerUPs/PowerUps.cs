@@ -39,6 +39,7 @@ public class PowerUps : MonoBehaviour {
 	}
 	public void Demolition () {
 		print ("NUKE");
+		myEnemies.FindEnemiesArray ();
 		myEnemies.NUKE ();
 		myPlayerStats.score += 400;
 		myPlayerStats.UpdateScore ();
