@@ -16,11 +16,12 @@ public class EnemySpawner : MonoBehaviour {
 
 	}
 
-	public enum WaveState {Spawning, Waiting,}
+	public enum WaveState {Spawning, Waiting,Stop}
 
 	public EnemyWaves[] waves;
 	//public int timeBetweenWaves;
 	public EnemyWaves myEnemyWaves;
+	public Player myPlayer;
 
 	public WaveState state; 
 
@@ -28,6 +29,9 @@ public class EnemySpawner : MonoBehaviour {
 	public GameObject EnemyPrefab;
 	public GameObject[] EnemyPrefabClone;
 
+	public void StopSpawning(){
+		state = WaveState.Stop;
+	}
 	public void SpawnState () {
 		switch (state){
 		case WaveState.Spawning:
@@ -41,12 +45,14 @@ public class EnemySpawner : MonoBehaviour {
 		case WaveState.Waiting:
 			StartCoroutine (TooEasy ());
 			break;
+		case WaveState.Stop:
+			break;
 		}
 	}
 
 	IEnumerator TooEasy (){
 		yield return new WaitForSeconds (myEnemyWaves.TemporaryDificulty);
-		if (myEnemyWaves.ActiveEnemies == myEnemyWaves.EnemiesLeft && state != WaveState.Spawning) {
+		if (myEnemyWaves.ActiveEnemies == myEnemyWaves.EnemiesLeft && state != WaveState.Spawning && myPlayer.state != Player.GameState.GameOver) {
 			myEnemyWaves.EnemiesLeft += 2;
 			state = WaveState.Spawning;
 			SpawnState();

@@ -25,10 +25,17 @@ public class Enemy : MonoBehaviour {
 		case AttackState.Attacking:
 			switch (col.tag) {
 			case "Player":  
-				myPlayerStats.health -= 50;
-				print ("Player Damaged");
-				myPlayerStats.UpdateHealth ();
-				state = AttackState.NotAttacking;
+				if (myPlayerStats.health > 50) { 
+					myPlayerStats.health -= 50;
+					print ("Player Damaged");
+					myPlayerStats.UpdateHealth ();
+					state = AttackState.NotAttacking;
+				} else {
+					myPlayerStats.health = 0;
+					myEnemySpawner.StopSpawning ();
+					myPlayerStats.GameOver();
+					myPlayerStats.PlayState ();
+				}
 				//this makes all enemies unable to attack 
 				break;
 			}
