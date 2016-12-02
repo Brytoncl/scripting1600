@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class Score : MonoBehaviour {
 
 	public void IncreaseScore (int score, int addPoints ) {

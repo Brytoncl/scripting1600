@@ -4,8 +4,11 @@ using System.Collections;
 public class Enemies : MonoBehaviour {
 
 	public int damage;
-	public int health;
+	public int storedHealth = 100;
+	public int health = 100;
+	public FireAction fireAction;
 
-	//needs to listen to an event for instakill and for the nuke to change health variables.
-	//needs to listen to an event to be added to a list and set to a respawn method.
+	void OnMouseDown () {
+		fireAction.Fire(health);
+	}
 }
