@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Colt : MonoBehaviour {
+public class Colt : Weapons {
 
 	public int damage = 20;
 	public int  magazine = 8;
@@ -10,8 +10,14 @@ public class Colt : MonoBehaviour {
 	public int maxReserves = 126;
 	public float reloadTime = 3.5f;
 
+
+	public void stateChange() {
+		
+	}
+
+
 	// Use this for initialization
 	void Start () {
-	
+		weaponChange (damage, magazine, magazineSize, reserves, maxReserves, reloadTime);
 	}
 }

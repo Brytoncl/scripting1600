@@ -4,7 +4,7 @@ using System.Collections;
 public class PowerUps : MonoBehaviour {
 	//parent that gives function on collision enter, and ability()
 
-	// interface these functions into the controlls.
+	// interface these functions into the parent.
 
 	void OnCollisonEnter () {
 		Ability ();

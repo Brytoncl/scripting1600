@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class ZombieSpawner : MonoBehaviour {
 
 	public Transform[] spawnPoints;
-	//public GameObject[] zombies;
 	public bool canSpawnZombies = true;
 
 	int i;
@@ -41,13 +40,7 @@ public class ZombieSpawner : MonoBehaviour {
 	}
 	void Start () {
 		StartCoroutine(SpawnZombies());
-		//zombieRecycleList = new List<SendToSpawner> ();
 		SendToSpawner.SendThis += SendThisHandler;
-	}
-
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }
 	
