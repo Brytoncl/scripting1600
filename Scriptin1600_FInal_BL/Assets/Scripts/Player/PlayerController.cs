@@ -16,17 +16,32 @@ public class PlayerController : MonoBehaviour {
 	{
 			transform.Rotate (0, _myInput*rotateSpeed, 0);
 		}
-		
-//			void Move (float _myInput) 
-//			{
-//		moveVector.x =moveSpeed* _myInput;
-//			//moveVector = transform.TransformDirection (moveVector*moveSpeed*Time.deltaTime);
-//		character.
-//			}
-		
-			void Update () {
-					//Move (Input.GetAxis ("Vertical"));
 
+	IEnumerator ReloadTime() {
+		int i;
+		yield return new WaitForSeconds (Statics.ActiveReloadTime);
+		i = (Statics.ActiveMagazineSize -= Statics.ActiveMagazine);
+		Statics.ActiveReserves -= i;
+		Statics.ActiveMagazine = Statics.ActiveMagazineSize;
+		//problem where it will reload if reserves arent great enough.
+
+	}
+
+	public void Reload () {
+		StartCoroutine (ReloadTime());
+	}
+	public void SwitchWeapons () 
+	{
+
+	}
+	public void PickUp () {
+
+	}
+		
+	void Update () {
+		if (Input.GetKeyUp (KeyCode.R)) {
+			Reload ();
+		}
 		moveDirection = new Vector3(Input.GetAxis("Vertical"),0,0);
 		moveDirection = transform.TransformDirection (moveDirection*moveSpeed*Time.deltaTime);
 					Rotate (Input.GetAxis ("Horizontal"));
