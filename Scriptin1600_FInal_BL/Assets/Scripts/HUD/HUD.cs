@@ -9,8 +9,22 @@ public class HUD : MonoBehaviour {
 	public Text healthText;
 	public Text scoreText;
 
+//	void Awake () {
+//		UpdateHUD ();
+//	}
 
-	public static void UpdateHUD() {
-		
+	public void PrintReload ( ) {
+		ammoText.text = "Reloading...";
+	}
+
+	public void UpdateHUD() {
+		scoreText.text = "SCORE: " + Statics.score;
+		ammoText.text = "Ammo: " + Statics.ActiveMagazine;
+		reservesText.text = "reserves: " + Statics.ActiveReserves;
+		healthText.text = "Health: " + Statics.playerHealth;
+
+		//weaponText.text = "weaponname"
+
+
 	}
 }

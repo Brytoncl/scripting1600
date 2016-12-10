@@ -1,11 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Weapons : MonoBehaviour {
 	
 	enum Weapon {colt, kar98k,  m1Thompson, m1Grand, DoubleBarrellShotgun }
 
 	Weapon currentWeapon = Weapon.colt;
+
+	public List <GameObject> WeaponSlots;
+
+	public void AddWeapons(GameObject gun) {
+		print ("running add weapons");
+		if (WeaponSlots.Count < 2) {
+			print (gun);
+			WeaponSlots.Add (gun);
+			//WeaponSlots.Reverse ();
+		} else
+			print("2");
+			WeaponSlots.RemoveAt (0);
+		WeaponSlots.Add (gun);
+	}
+
+	public void switchWeapons () {
+		WeaponSlots.Reverse();
+	}
 
 //	Colt myColt;
 //	Kar98k myKar98k;

@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class MaxAmmo : MonoBehaviour {
+public class MaxAmmo : HUD {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public static Action AddAmmo;
+
+	void OnTriggerEnter () {
+		AddAmmo ();
+		UpdateHUD();
 	}
 }

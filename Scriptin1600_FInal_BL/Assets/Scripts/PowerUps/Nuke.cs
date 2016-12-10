@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Nuke : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	public static Action DropNuke;
+		
+	void OnTriggerEnter (){
+		this.gameObject.SetActive (false);
+		Statics.score += 400;
+		DropNuke ();
+		print ("Nuke");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

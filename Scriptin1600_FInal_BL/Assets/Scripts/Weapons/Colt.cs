@@ -18,6 +18,18 @@ public class Colt : Weapons {
 
 	// Use this for initialization
 	void Start () {
+		WeaponSlots.Add (this.gameObject);
+		MaxAmmo.AddAmmo += MaxAmmoHandler;
 		weaponChange (damage, magazine, magazineSize, reserves, maxReserves, reloadTime);
+	}
+
+	void OnMouseDown () {
+		print ("clicked gun");
+		base.AddWeapons (this.gameObject);
+	}
+
+	public void MaxAmmoHandler(){
+		reserves = maxReserves;
+
 	}
 }

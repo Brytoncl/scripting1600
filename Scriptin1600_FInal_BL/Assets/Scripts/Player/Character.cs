@@ -8,7 +8,4 @@ public class Character : MonoBehaviour {
 	public int speed = 20;
 
 	public int gravity = 1;
-
-	public int damage = 0;
-
 }

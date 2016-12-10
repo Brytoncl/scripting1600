@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Kar98k : MonoBehaviour {
-
+public class M1Thompson : MonoBehaviour {
 
 	public int damage = 20;
 	public int  magazine = 8;

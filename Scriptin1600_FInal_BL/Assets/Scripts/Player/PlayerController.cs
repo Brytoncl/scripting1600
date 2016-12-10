@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : HUD {
 
 
 	private CharacterController myCC;
@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Start () {
 			myCC = GetComponent<CharacterController> ();
+		UpdateHUD();
 			}
 	void Rotate (float _myInput) 
 	{
@@ -18,17 +19,26 @@ public class PlayerController : MonoBehaviour {
 		}
 
 	IEnumerator ReloadTime() {
-		int i;
-		yield return new WaitForSeconds (Statics.ActiveReloadTime);
-		i = (Statics.ActiveMagazineSize -= Statics.ActiveMagazine);
-		Statics.ActiveReserves -= i;
-		Statics.ActiveMagazine = Statics.ActiveMagazineSize;
-		//problem where it will reload if reserves arent great enough.
+		if (Statics.ActiveMagazineSize <= Statics.ActiveReserves) {
+			PrintReload ();
+			yield return new WaitForSeconds (Statics.ActiveReloadTime);
+			Statics.ActiveReserves -= Statics.ActiveMagazineSize;
+			Statics.ActiveMagazine = Statics.ActiveMagazineSize;
+			yield return new WaitForSeconds (.01f);
+			UpdateHUD ();
+			Statics.canReload = true;
+			Statics.canShoot = true;
+		}
+		//reload time isnt working yet and you can shoot while reloading. 
 
 	}
 
 	public void Reload () {
-		StartCoroutine (ReloadTime());
+		if (Statics.canReload == true && Statics.ActiveMagazine != Statics.ActiveMagazineSize) {
+			Statics.canReload = false;
+			Statics.canShoot = false;
+			StartCoroutine (ReloadTime ());
+		}
 	}
 	public void SwitchWeapons () 
 	{
