@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class M1Thompson : MonoBehaviour {
 
@@ -10,10 +11,26 @@ public class M1Thompson : MonoBehaviour {
 	public int maxReserves = 126;
 	public float reloadTime = 3.5f;
 
+	public int weaponPrice;
+
+	public Text thompsonPickupText;
+
 	void Start () {
+		thompsonPickupText.enabled = false;
 		MaxAmmo.AddAmmo += MaxAmmoHandler;
 	}
 	public void MaxAmmoHandler(){
 		reserves = maxReserves;
+	}
+
+	void OnTriggerStay (){
+		thompsonPickupText.enabled = true;
+		thompsonPickupText.text = (this.gameObject + "Costs " + weaponPrice + "points.");
+		//either on mouse down to pickup weapon or get key.
+		//then replace primary slot with new weapon.
+	}
+
+	void OnTriggerExit () {
+		thompsonPickupText.enabled = false;
 	}
 }

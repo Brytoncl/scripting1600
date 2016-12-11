@@ -16,6 +16,19 @@ public class InstaKill : PowerUps {
 
 	}
 
+	void Start () {
+
+		Enemies.SpawnPowerUp +=	InstaKillHandler;
+	}
+
+
+	public void  InstaKillHandler(Transform enemyPos, int randomPP){
+		if (randomPP == 1) {
+			this.transform.position = enemyPos.position;
+			this.gameObject.SetActive (true);
+		}
+	}
+
 
 
 }

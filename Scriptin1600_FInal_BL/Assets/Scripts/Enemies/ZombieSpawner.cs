@@ -18,6 +18,8 @@ public class ZombieSpawner : MonoBehaviour {
 		zombieRecycleList.Add (_recycler);
 
 	}
+
+
 		
 	IEnumerator SpawnZombies ()
 	{
@@ -27,18 +29,18 @@ public class ZombieSpawner : MonoBehaviour {
 			i = Random.Range(0, spawnPoints.Length - 1);
 			yield return new WaitForSeconds(Statics.spawnFrequency);
 			zombieRecycleList[j].transform.position = spawnPoints [i].position;
-			zombieRecycleList [j].gameObject.SetActive (true);
+			zombieRecycleList[j].gameObject.SetActive (true);
 			j++;
-			if (j > zombieRecycleList.Count) {
+			if (j == zombieRecycleList.Count) {
 
 				j = 0;
 			}
-		
-	
-	
 		}
 	}
 	void Start () {
+		foreach (Transform item in spawnPoints) {
+			print (item + "is active.");
+		}
 		StartCoroutine(SpawnZombies());
 		SendToSpawner.SendThis += SendThisHandler;
 	}

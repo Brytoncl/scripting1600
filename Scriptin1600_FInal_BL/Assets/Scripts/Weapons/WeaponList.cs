@@ -14,6 +14,15 @@ public class WeaponList : MonoBehaviour {
 
 	public void Start () {
 		SendToWeapons.AddThisWeapon += SendThisHandler;
+		StartCoroutine (RestockNotify ());
+	}
 
+	//not needed
+	IEnumerator RestockNotify() {
+
+		yield return new WaitForSeconds (3);
+		foreach (SendToWeapons item in WeaponsList) {
+			print (item + "Restocked");
+		}
 	}
 }

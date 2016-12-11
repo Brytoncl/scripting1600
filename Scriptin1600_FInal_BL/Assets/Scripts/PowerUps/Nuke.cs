@@ -13,4 +13,17 @@ public class Nuke : MonoBehaviour {
 		print ("Nuke");
 	}
 
+	void Start () {
+
+		Enemies.SpawnPowerUp +=	NukeHandler;
+	}
+
+
+	public void  NukeHandler(Transform enemyPos, int randomPP){
+		if (randomPP == 3) {
+			this.transform.position = enemyPos.position;
+			this.gameObject.SetActive (true);
+		}
+	}
+
 }

@@ -5,8 +5,11 @@ public class Statics : MonoBehaviour {
 	//score stats
 	public static int score = 0;
 
-	//default base stats
+	//default player stats
 	public static int playerHealth = 100;
+	public static float HealthRegenSpeed = .05f;
+
+	//default enemy stats
 	public static int enemyMaxHealth = 100; 
 	public static int enemyinstaHealth = 1;
 

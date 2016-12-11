@@ -13,6 +13,7 @@ public class SendToSpawner : MonoBehaviour {
 			SendThis (this);
 			gameObject.SetActive (false);
 		}
+			
 	}
 
 
