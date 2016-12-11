@@ -56,5 +56,19 @@ public class PlayerController : HUD {
 		moveDirection = transform.TransformDirection (moveDirection*moveSpeed*Time.deltaTime);
 					Rotate (Input.GetAxis ("Horizontal"));
 		myCC.Move (moveDirection);
+
+		//bonus question
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			Statics.yourAnswer = 4;
+		}
+		if (Input.GetKeyDown (KeyCode.U)) {
+			Statics.yourAnswer = 3;
+		}
+		if (Input.GetKeyDown (KeyCode.X)) {
+			Statics.yourAnswer = 2;
+		}
+		if (Input.GetKeyDown (KeyCode.P)) {
+			Statics.yourAnswer = 1;
+		}
 				}
 		}

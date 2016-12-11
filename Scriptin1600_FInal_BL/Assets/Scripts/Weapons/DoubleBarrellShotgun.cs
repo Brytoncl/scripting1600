@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class DoubleBarrellShotgun : Weapons {
+public class DoubleBarrellShotgun : Weapons, IWeapons {
 
 
 	public int damage = 20;
@@ -16,7 +16,7 @@ public class DoubleBarrellShotgun : Weapons {
 
 	public Text ShotgunPickupText;
 
-	void Start () {
+	public void Start () {
 		ShotgunPickupText.enabled = false;
 		MaxAmmo.AddAmmo += MaxAmmoHandler;
 	}
@@ -24,14 +24,14 @@ public class DoubleBarrellShotgun : Weapons {
 		reserves = maxReserves;
 	}
 
-	void OnTriggerStay (){
+	public void OnTriggerStay (){
 		ShotgunPickupText.enabled = true;
 		ShotgunPickupText.text = (this.gameObject + "Costs " + weaponPrice + "points.");
 			//either on mouse down to pickup weapon or get key.
 			//then replace primary slot with new weapon.
 }
 
-	void OnTriggerExit () {
+	public void OnTriggerExit () {
 		ShotgunPickupText.enabled = false;
 	}
 }

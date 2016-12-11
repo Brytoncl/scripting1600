@@ -2,13 +2,13 @@
 using System.Collections;
 using System;
 
-public class MaxAmmo : HUD {
+public class MaxAmmo : HUD, IPowerUps {
 	
 	public Transform maxAmmoPos;
 
 	public static Action AddAmmo;
 
-	void Start () {
+	public void Start () {
 
 		Enemies.SpawnPowerUp +=	MaxAmmoHandler;
 	}
@@ -21,7 +21,7 @@ public class MaxAmmo : HUD {
 		}
 	}
 
-	void OnTriggerEnter () {
+	public void OnTriggerEnter () {
 		AddAmmo ();
 		UpdateHUD();
 		gameObject.SetActive (false);

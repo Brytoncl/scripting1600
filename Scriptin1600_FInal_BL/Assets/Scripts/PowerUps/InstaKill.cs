@@ -2,13 +2,13 @@
 using System.Collections;
 using System;
 
-public class InstaKill : PowerUps {
+public class InstaKill : PowerUps, IPowerUps {
 
 	public int newHealth = 1;
 	public int activeTime = 3;
 	public int defaultHealth = 100;
 
-	void OnTriggerEnter () {
+	public void OnTriggerEnter () {
 		PowerUps.ActivateInstaKill (newHealth);
 		base.SetHealth ();
 		this.gameObject.SetActive (false);
@@ -16,7 +16,7 @@ public class InstaKill : PowerUps {
 
 	}
 
-	void Start () {
+	public void Start () {
 
 		Enemies.SpawnPowerUp +=	InstaKillHandler;
 	}

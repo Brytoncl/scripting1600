@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Colt : Weapons {
+public class Colt : Weapons, IWeapons {
 
 	public int damage = 20;
 	public int  magazine = 8;
@@ -22,7 +22,7 @@ public class Colt : Weapons {
 
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 		coltPickupText.enabled = false;
 		WeaponSlots.Add (this.gameObject);
 		MaxAmmo.AddAmmo += MaxAmmoHandler;
@@ -40,13 +40,13 @@ public class Colt : Weapons {
 
 	}
 
-	void OnTriggerStay (){
+	public void OnTriggerStay (){
 		coltPickupText.enabled = true;
 		coltPickupText.text = (this.gameObject + "Costs " + weaponPrice + "points.");
 			//either on mouse down to pickup weapon or get key.
 			//then replace primary slot with new weapon.
 	}
-	void OnTriggerExit () {
+	public void OnTriggerExit () {
 		coltPickupText.enabled = false;
 	}
 }

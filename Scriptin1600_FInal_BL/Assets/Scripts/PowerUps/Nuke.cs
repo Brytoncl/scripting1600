@@ -2,18 +2,18 @@
 using System.Collections;
 using System;
 
-public class Nuke : MonoBehaviour {
+public class Nuke : MonoBehaviour, IPowerUps {
 
 	public static Action DropNuke;
 		
-	void OnTriggerEnter (){
+	public void OnTriggerEnter (){
 		this.gameObject.SetActive (false);
 		Statics.score += 400;
 		DropNuke ();
 		print ("Nuke");
 	}
 
-	void Start () {
+	public void Start () {
 
 		Enemies.SpawnPowerUp +=	NukeHandler;
 	}

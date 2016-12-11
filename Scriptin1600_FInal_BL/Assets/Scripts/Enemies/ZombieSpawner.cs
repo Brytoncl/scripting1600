@@ -39,7 +39,10 @@ public class ZombieSpawner : MonoBehaviour {
 	}
 	void Start () {
 		foreach (Transform item in spawnPoints) {
-			print (item + "is active.");
+			print (item + "foreach loop");
+		}
+		for (int i = 0; i < spawnPoints.Length; i++){
+			print (spawnPoints [i] + "for loop");
 		}
 		StartCoroutine(SpawnZombies());
 		SendToSpawner.SendThis += SendThisHandler;

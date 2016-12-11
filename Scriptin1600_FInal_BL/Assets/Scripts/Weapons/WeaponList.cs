@@ -22,7 +22,10 @@ public class WeaponList : MonoBehaviour {
 
 		yield return new WaitForSeconds (3);
 		foreach (SendToWeapons item in WeaponsList) {
-			print (item + "Restocked");
+			print (item + "Foreach loop");
+		}
+		for (int i = 0; i < WeaponsList.Count; i++){
+			print (WeaponsList[i] + "for loop");
 		}
 	}
 }

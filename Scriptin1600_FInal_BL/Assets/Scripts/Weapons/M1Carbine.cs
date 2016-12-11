@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class M1Carbine : MonoBehaviour {
+public class M1Carbine : Weapons, IWeapons {
 
 	public int damage = 20;
 	public int  magazine = 8;
@@ -15,7 +15,7 @@ public class M1Carbine : MonoBehaviour {
 
 	public Text carbinePickupText;
 
-	void Start () {
+	public void Start () {
 		carbinePickupText.enabled = false;
 		MaxAmmo.AddAmmo += MaxAmmoHandler;
 	}
@@ -23,14 +23,14 @@ public class M1Carbine : MonoBehaviour {
 		reserves = maxReserves;
 	}
 
-	void OnTriggerStay (){
+	public void OnTriggerStay (){
 		carbinePickupText.enabled = true;
 		carbinePickupText.text = (this.gameObject + "Costs " + weaponPrice + "points.");
 		//either on mouse down to pickup weapon or get key.
 		//then replace primary slot with new weapon.
 	}
 
-	void OnTriggerExit () {
+	public void OnTriggerExit () {
 		carbinePickupText.enabled = false;
 	}
 }

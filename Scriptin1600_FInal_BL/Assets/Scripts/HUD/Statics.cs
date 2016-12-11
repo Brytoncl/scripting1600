@@ -34,4 +34,28 @@ public class Statics : MonoBehaviour {
 	//powerup stats
 	public static float instaKillActiveTime = 3;
 	//public static int DoublePointsActiveTime = 30;
+
+	//bonus
+	public static int yourAnswer = 0;
+
+	public static void Answer (int yourAnswer) {
+
+		switch (yourAnswer) {
+		case 1:
+			print ("You answerd Clayton. Correct Anthony is your favorite teacher");
+			break;
+		case 2:
+			print ("You answerd Marty. Correct Anthony is your favorite teacher");
+			break;
+		case 3: 
+			print ("You answerd Rodayne. Correct Anthony is your favorite teacher");
+			break;
+		case 4:
+			print ("You answerd Anthony. Correct Anthony is your favorite teacher");
+			break;
+		default:
+			print ("Prefer not to answer. Correct Anthony is your favorite teacher");
+			break;
+		}
+	}
 }

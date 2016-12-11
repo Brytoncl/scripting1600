@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class M1Thompson : MonoBehaviour {
+public class M1Thompson : Weapons,IWeapons {
 
 	public int damage = 20;
 	public int  magazine = 8;
@@ -15,7 +15,7 @@ public class M1Thompson : MonoBehaviour {
 
 	public Text thompsonPickupText;
 
-	void Start () {
+	public void Start () {
 		thompsonPickupText.enabled = false;
 		MaxAmmo.AddAmmo += MaxAmmoHandler;
 	}
@@ -23,14 +23,14 @@ public class M1Thompson : MonoBehaviour {
 		reserves = maxReserves;
 	}
 
-	void OnTriggerStay (){
+	public void OnTriggerStay (){
 		thompsonPickupText.enabled = true;
 		thompsonPickupText.text = (this.gameObject + "Costs " + weaponPrice + "points.");
 		//either on mouse down to pickup weapon or get key.
 		//then replace primary slot with new weapon.
 	}
 
-	void OnTriggerExit () {
+	public void OnTriggerExit () {
 		thompsonPickupText.enabled = false;
 	}
 }
