@@ -17,31 +17,16 @@ public class Weapons : MonoBehaviour {
 			print (gun);
 			WeaponSlots.Add (gun);
 			//WeaponSlots.Reverse ();
-		} else
-			print("2");
+		} else {
+			print ("2");
 			WeaponSlots.RemoveAt (0);
-		WeaponSlots.Add (gun);
+			WeaponSlots.Add (gun);
+		}
 	}
 
 	public void switchWeapons () {
 		WeaponSlots.Reverse();
 	}
-
-//	Colt myColt;
-//	Kar98k myKar98k;
-//	DoubleBarrellShotgun myDoubleBarrellShotgun;
-//	M1Thompson myM1Thompson;
-//	M1Carbine myM1Carbine;
-//
-//
-//
-//	void Awake () {
-//		myColt = new Colt();
-//		myKar98k = new Kar98k ();
-//		myDoubleBarrellShotgun = new DoubleBarrellShotgun ();
-//		myM1Thompson = new M1Thompson();
-//		myM1Carbine = new M1Carbine();
-//	}
 
 	void ChangeStatics (int weaponDamage, int magazine, int magazineSize, int reserves, int maxReserves, float reloadTime) {
 		Statics.ActiveWeaponDamage = weaponDamage;

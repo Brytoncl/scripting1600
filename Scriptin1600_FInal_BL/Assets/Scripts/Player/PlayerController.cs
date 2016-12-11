@@ -9,6 +9,12 @@ public class PlayerController : HUD {
 	public float moveSpeed = 5;
 	public float rotateSpeed = 1;
 
+	public override void UpdateHUD ()
+	{
+		ammoText.text = "Ammo: " + Statics.ActiveMagazine;
+		reservesText.text = "reserves: " + Statics.ActiveReserves;
+	}
+
 	void Start () {
 			myCC = GetComponent<CharacterController> ();
 		UpdateHUD();

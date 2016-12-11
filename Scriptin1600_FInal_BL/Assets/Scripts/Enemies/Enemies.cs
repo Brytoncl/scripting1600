@@ -22,6 +22,13 @@ public class Enemies : HUD {
 		KillEnemy ();
 	}
 
+	public override void UpdateHUD ()
+	{
+		scoreText.text = "SCORE: " + Statics.score;
+		ammoText.text = "Ammo: " + Statics.ActiveMagazine;
+		reservesText.text = "reserves: " + Statics.ActiveReserves;
+		healthText.text = "Health: " + Statics.playerHealth;
+	}
 	IEnumerator AttackDelay()
 	{
 		yield return new WaitForSeconds (atttackSpeed);

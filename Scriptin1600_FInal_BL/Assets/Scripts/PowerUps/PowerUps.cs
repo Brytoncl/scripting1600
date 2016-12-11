@@ -25,11 +25,12 @@ public class PowerUps : MonoBehaviour {
 	IEnumerator InstaKillTime () 
 	{
 		
-		PowerUps.ActivateInstaKill (Statics.enemyMaxHealth);
+
 		print ("instakill over");
 		yield return new WaitForSeconds (Statics.instaKillActiveTime);
+		PowerUps.ActivateInstaKill (Statics.enemyMaxHealth);
 		print ("success");
-		yield return new WaitForSeconds (0);
+//		yield return new WaitForSeconds (0);
 	}
 
 

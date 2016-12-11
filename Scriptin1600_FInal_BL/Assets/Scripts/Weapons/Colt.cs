@@ -24,7 +24,7 @@ public class Colt : Weapons, IWeapons {
 	// Use this for initialization
 	public void Start () {
 		coltPickupText.enabled = false;
-		WeaponSlots.Add (this.gameObject);
+		base.WeaponSlots.Add (this.gameObject);
 		MaxAmmo.AddAmmo += MaxAmmoHandler;
 		weaponChange (damage, magazine, magazineSize, reserves, maxReserves, reloadTime);
 	}
@@ -34,13 +34,13 @@ public class Colt : Weapons, IWeapons {
 		base.AddWeapons (this.gameObject);
 	}
 
-	public void MaxAmmoHandler(){
+	public void MaxAmmoHandler() {
 		reserves = maxReserves;
 		weaponChange (damage, magazine, magazineSize, reserves, maxReserves, reloadTime);
 
 	}
 
-	public void OnTriggerStay (){
+	public void OnTriggerStay () {
 		coltPickupText.enabled = true;
 		coltPickupText.text = (this.gameObject + "Costs " + weaponPrice + "points.");
 			//either on mouse down to pickup weapon or get key.

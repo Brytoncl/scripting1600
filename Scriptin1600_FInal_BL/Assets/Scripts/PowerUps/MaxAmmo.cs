@@ -21,6 +21,13 @@ public class MaxAmmo : HUD, IPowerUps {
 		}
 	}
 
+	public override void UpdateHUD ()
+	{
+		//base.UpdateHUD ();
+		ammoText.text = "Ammo: " + Statics.ActiveMagazine;
+		reservesText.text = "reserves: " + Statics.ActiveReserves;
+	}
+
 	public void OnTriggerEnter () {
 		AddAmmo ();
 		UpdateHUD();
