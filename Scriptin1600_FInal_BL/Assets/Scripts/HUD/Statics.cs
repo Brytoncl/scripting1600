@@ -32,7 +32,7 @@ public class Statics : MonoBehaviour {
 	public static int activeEnemies = 0;
 
 	//powerup stats
-	public static float instaKillActiveTime = 3;
+	public static float instaKillActiveTime = 30;
 	//public static int DoublePointsActiveTime = 30;
 
 	//bonus

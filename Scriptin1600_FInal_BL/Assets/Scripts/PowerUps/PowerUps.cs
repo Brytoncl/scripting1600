@@ -10,6 +10,7 @@ public class PowerUps : MonoBehaviour {
 	public bool instaKill = false;
 
 	public static Action <int> ActivateInstaKill;
+
 //	void OnCollisonEnter () {
 //		Ability ();
 //	}
@@ -24,13 +25,10 @@ public class PowerUps : MonoBehaviour {
 
 	IEnumerator InstaKillTime () 
 	{
-		
-
-		print ("instakill over");
 		yield return new WaitForSeconds (Statics.instaKillActiveTime);
 		PowerUps.ActivateInstaKill (Statics.enemyMaxHealth);
+		print ("instakill over");
 		print ("success");
-//		yield return new WaitForSeconds (0);
 	}
 
 

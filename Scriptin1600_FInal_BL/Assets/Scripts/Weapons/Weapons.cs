@@ -11,6 +11,10 @@ public class Weapons : MonoBehaviour {
 
 	public List <GameObject> WeaponSlots;
 
+	public virtual void Start () {
+		WeaponSlots = new List<GameObject> ();
+	}
+
 	public void AddWeapons(GameObject gun) {
 		print ("running add weapons");
 		if (WeaponSlots.Count < 2) {

@@ -22,7 +22,8 @@ public class Colt : Weapons, IWeapons {
 
 
 	// Use this for initialization
-	public void Start () {
+	public override void Start () {
+		base.Start ();
 		coltPickupText.enabled = false;
 		base.WeaponSlots.Add (this.gameObject);
 		MaxAmmo.AddAmmo += MaxAmmoHandler;
